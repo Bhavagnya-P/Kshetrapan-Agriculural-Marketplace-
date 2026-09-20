@@ -1,0 +1,76 @@
+CREATE TABLE IF NOT EXISTS users (
+    username VARCHAR(50) NOT NULL,
+    role VARCHAR(10) DEFAULT NULL,
+    name VARCHAR(40) DEFAULT NULL,
+    password VARCHAR(30) DEFAULT NULL,
+    phone VARCHAR(20) DEFAULT NULL,
+    address VARCHAR(100) DEFAULT NULL,
+    PRIMARY KEY (username)
+);
+
+CREATE TABLE IF NOT EXISTS account (
+    acno INT DEFAULT NULL,
+    acname VARCHAR(20) DEFAULT NULL,
+    acbal INT DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS products (
+    pid INT NOT NULL AUTO_INCREMENT,
+    f_uname VARCHAR(50) DEFAULT NULL,
+    pname VARCHAR(100) DEFAULT NULL,
+    category VARCHAR(50) DEFAULT NULL,
+    price DOUBLE DEFAULT NULL,
+    quantity INT DEFAULT NULL,
+    description VARCHAR(200) DEFAULT NULL,
+    PRIMARY KEY (pid)
+);
+
+CREATE TABLE IF NOT EXISTS cart (
+    cart_id INT NOT NULL AUTO_INCREMENT,
+    b_uname VARCHAR(50) DEFAULT NULL,
+    pid INT DEFAULT NULL,
+    quantity INT DEFAULT NULL,
+    PRIMARY KEY (cart_id)
+);
+
+CREATE TABLE IF NOT EXISTS complaints (
+    complaint_id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(50) DEFAULT NULL,
+    subject VARCHAR(100) DEFAULT NULL,
+    message VARCHAR(300) DEFAULT NULL,
+    status VARCHAR(20) DEFAULT NULL,
+    f_uname VARCHAR(50) DEFAULT NULL,
+    reply VARCHAR(300) DEFAULT NULL,
+    PRIMARY KEY (complaint_id)
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+    order_id INT NOT NULL AUTO_INCREMENT,
+    b_uname VARCHAR(50) DEFAULT NULL,
+    f_uname VARCHAR(50) DEFAULT NULL,
+    pid INT DEFAULT NULL,
+    quantity INT DEFAULT NULL,
+    total_amount DOUBLE DEFAULT NULL,
+    order_date DATE DEFAULT NULL,
+    status VARCHAR(20) DEFAULT NULL,
+    PRIMARY KEY (order_id)
+);
+
+CREATE TABLE IF NOT EXISTS payments (
+    payment_id INT NOT NULL AUTO_INCREMENT,
+    order_id INT DEFAULT NULL,
+    b_uname VARCHAR(50) DEFAULT NULL,
+    amount DOUBLE DEFAULT NULL,
+    payment_date DATE DEFAULT NULL,
+    status VARCHAR(20) DEFAULT NULL,
+    PRIMARY KEY (payment_id)
+);
+
+CREATE TABLE IF NOT EXISTS reviews (
+    review_id INT NOT NULL AUTO_INCREMENT,
+    b_uname VARCHAR(50) DEFAULT NULL,
+    pid INT DEFAULT NULL,
+    rating INT DEFAULT NULL,
+    comment VARCHAR(300) DEFAULT NULL,
+    PRIMARY KEY (review_id)
+);
