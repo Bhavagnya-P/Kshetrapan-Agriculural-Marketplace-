@@ -1,4 +1,4 @@
-FROM tomcat:10.1-jdk17-unzip
+FROM tomcat:10.1-jdk17
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y mysql-server && rm -rf /var/lib/apt/lists/*
