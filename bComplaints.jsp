@@ -9,7 +9,7 @@ try
         String subject=request.getParameter("subject");
         String message=request.getParameter("message");
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
         PreparedStatement ps = con.prepareStatement("insert into complaints(username,f_uname,subject,message,status) values(?,?,?,?,?)");
         ps.setString(1,uname);
         ps.setString(2,farmer);

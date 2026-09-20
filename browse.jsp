@@ -18,7 +18,7 @@
 try
 {
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     Statement st = con.createStatement();
     ResultSet rs = st.executeQuery("select p.*, avg(r.rating) avg_rating, count(r.review_id) total_reviews " +
     "from products p left join reviews r on p.pid=r.pid group by p.pid");

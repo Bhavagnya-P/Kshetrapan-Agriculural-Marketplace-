@@ -39,7 +39,7 @@ if(role!=null && role.equals("Admin"))
 try
 {
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     ResultSet rs;
     String search=request.getParameter("search");
     if(role.equals("Admin"))

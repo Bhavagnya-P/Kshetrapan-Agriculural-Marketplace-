@@ -17,7 +17,7 @@ try
 {
     String uname=(String)session.getAttribute("user");
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     PreparedStatement ps = con.prepareStatement("select c.cart_id,c.pid,c.quantity,p.pname,p.price "+
     "from cart c, products p where c.pid=p.pid and c.b_uname=?");
     ps.setString(1,uname);

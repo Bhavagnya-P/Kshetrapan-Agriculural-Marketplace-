@@ -10,7 +10,7 @@ int quantity=0;
 String description="";
 String farmer="";
 Class.forName("com.mysql.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
 if(pid!=0)
 {
     PreparedStatement ps;

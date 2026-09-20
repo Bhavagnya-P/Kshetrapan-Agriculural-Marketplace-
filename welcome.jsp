@@ -7,7 +7,7 @@ int orders = 0;
 try
 {
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     Statement st = con.createStatement();
     ResultSet rs;
     // Total Farmers

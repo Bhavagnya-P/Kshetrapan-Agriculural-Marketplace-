@@ -5,7 +5,7 @@ try
     if(request.getParameter("cid")!=null)
     {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
         PreparedStatement ps = con.prepareStatement("update complaints set reply=?,status=? where complaint_id=?");
         ps.setString(1,request.getParameter("reply"));
         ps.setString(2,request.getParameter("status"));

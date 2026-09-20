@@ -11,7 +11,7 @@ try
     int orderId = Integer.parseInt(
     request.getParameter("order_id"));
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     PreparedStatement ps = con.prepareStatement("delete from orders where order_id=?");
     ps.setInt(1, orderId);
     int x = ps.executeUpdate();

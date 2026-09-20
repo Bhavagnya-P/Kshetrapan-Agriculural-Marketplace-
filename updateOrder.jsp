@@ -4,7 +4,7 @@ int orderId = Integer.parseInt(request.getParameter("order_id"));
 String role = (String)session.getAttribute("role");
 String uname = (String)session.getAttribute("user");
 Class.forName("com.mysql.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
 PreparedStatement ps;
 if(role.equals("Admin"))
 {

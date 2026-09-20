@@ -49,7 +49,7 @@
         String address=request.getParameter("address");
         if(username!=null){
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
         PreparedStatement ps=con.prepareStatement("insert into users values(?,?,?,?,?,?)");
         ps.setString(1, role);
         ps.setString(2, name);

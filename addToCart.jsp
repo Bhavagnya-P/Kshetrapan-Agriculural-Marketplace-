@@ -5,7 +5,7 @@ try
     String uname=(String)session.getAttribute("user");
     int pid=Integer.parseInt(request.getParameter("pid"));
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     PreparedStatement ps = con.prepareStatement("select * from cart where b_uname=? and pid=?");
     ps.setString(1,uname);
     ps.setInt(2,pid);

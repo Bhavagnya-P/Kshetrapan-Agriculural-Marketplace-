@@ -8,7 +8,7 @@ double deliveredRevenue = 0;
 try
 {
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     PreparedStatement ps1 = con.prepareStatement("select count(*) from orders where f_uname=?");
     ps1.setString(1, uname);
     ResultSet rs1 = ps1.executeQuery();

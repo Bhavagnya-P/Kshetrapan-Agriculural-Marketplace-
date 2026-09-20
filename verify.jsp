@@ -24,7 +24,7 @@ try
     else
     {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
         PreparedStatement ps = con.prepareStatement("select * from users where role=? and username=? and password=?");
         ps.setString(1,role);
         ps.setString(2,uname);

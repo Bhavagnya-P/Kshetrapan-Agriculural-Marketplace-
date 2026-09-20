@@ -11,7 +11,8 @@ RUN echo '#!/bin/bash\n\
 service mysql start\n\
 until mysqladmin ping >/dev/null 2>&1; do sleep 1; done\n\
 mysql -e "CREATE DATABASE IF NOT EXISTS defaultdb;"\n\
-mysql -e "ALTER USER \x27root\x27@\x27localhost\x27 IDENTIFIED WITH mysql_native_password BY \x27password\x27;"\n\
+mysql -e "CREATE USER \x27Admin\x27@\x27localhost\x27 IDENTIFIED BY \x27password\x27;"\n\
+mysql -e "GRANT ALL PRIVILEGES ON defaultdb.* TO \x27Admin\x27@\x27localhost\x27;"\n\
 mysql -e "FLUSH PRIVILEGES;"\n\
 if [ -f /usr/local/tomcat/webapps/ROOT/setup.sql ]; then mysql defaultdb < /usr/local/tomcat/webapps/ROOT/setup.sql; fi\n\
 /usr/local/tomcat/bin/catalina.sh run' > /entrypoint.sh \

@@ -7,7 +7,7 @@ String pname="";
 try
 {
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     PreparedStatement ps = con.prepareStatement("select pname from products where pid=?");
     ps.setInt(1,pid);
     ResultSet rs=ps.executeQuery();

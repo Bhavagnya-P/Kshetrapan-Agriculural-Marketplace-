@@ -17,7 +17,7 @@ try
 {
     String uname=(String)session.getAttribute("user");
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     PreparedStatement ps = con.prepareStatement("select o.*,p.pname from orders o,products p " + 
     "where o.pid=p.pid and o.b_uname=? order by o.order_date desc");
     ps.setString(1,uname);

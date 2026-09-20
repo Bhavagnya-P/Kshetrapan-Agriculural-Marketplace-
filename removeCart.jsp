@@ -4,7 +4,7 @@ try
 {
     int cartid=Integer.parseInt(request.getParameter("cartid"));
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
     PreparedStatement ps = con.prepareStatement("delete from cart where cart_id=?");
     ps.setInt(1,cartid);
     ps.executeUpdate();

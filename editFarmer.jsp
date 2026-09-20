@@ -11,7 +11,7 @@ if("new".equals(username))
     addMode=true;
 }
 Class.forName("com.mysql.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "Root");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "Admin", "Root");
 if(!addMode)
 {
     PreparedStatement ps = con.prepareStatement("select * from users where username=? and role='Farmer'");
