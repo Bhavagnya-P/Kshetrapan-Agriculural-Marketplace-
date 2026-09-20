@@ -1,14 +1,7 @@
-FROM eclipse-temurin:17-jdk-focal
+FROM tomcat:10.1-jdk17-unzip
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y wget mysql-server && rm -rf /var/lib/apt/lists/*
-
-# FIXED: Using a more stable download mirror path for Tomcat 10.1.16
-RUN wget https://apache.org -O /tmp/tomcat.tar.gz || \
-    wget https://apache.org -O /tmp/tomcat.tar.gz \
-    && mkdir /usr/local/tomcat \
-    && tar -xf /tmp/tomcat.tar.gz -C /usr/local/tomcat --strip-components=1 \
-    && rm /tmp/tomcat.tar.gz
+RUN apt-get update && apt-get install -y mysql-server && rm -rf /var/lib/apt/lists/*
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY . /usr/local/tomcat/webapps/ROOT/
